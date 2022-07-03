@@ -1,19 +1,92 @@
-.grid-container {
-    margin: 20px;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-}
-.grid-item {
-    /* background-color: rgba(255, 255, 255, 0.5); */
-    background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    text-align: center;
-}
-.flex-box{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+*{
+    margin:0px;
+    padding:0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;  
+    font-style: bold;
+    color: black;
+    font-weight: 500;
+  }
+  body{
+      background-color: #F56217;
+  }
+  .container{
+      height:60vh;
+      width: 30vh;
+      position:absolute;
+      top:50vh;
+      left:90vh;
+      transform:translate(-50%,-50%);
+      perspective: 1000px;
+  }
+  #cube{
+      height:250px;
+      width:250px;
+      position:absolute;
+      top:100px;
+      left:100px;
+      transform-style: preserve-3d;
+      animation :animate 11s infinite ease-in;
+      
+  }
+  @keyframes animate{
+      from{
+          transform: rotateY(359deg);
+      }
+      to{
+          transform: rotateY(0deg);
+          
+      }
+  }
+  .card{
+      height:250px;
+      width:250px;
+      text-align:center;
+      padding:80px 5px;
+      /* color:white; */
+      background: lightsalmon;
+      background-color: khaki;
+      border: 2px solid white;
+      font-size: 32px;
+      box-sizing: border-box;
+      position:absolute;
+      transition: all 2s ease-in;
+  }
+  #front{
+      transform: translateZ(125px);
+  }
+  #back{
+      transform: translateZ(-125px);
+  }
+  #left{
+      right:125px;
+      transform:rotateY(-90deg);
+  }
+  #right{
+      left:125px;
+      transform:rotateY(90deg);
+  }
+  #top{
+      bottom:125px;
+      transform:rotateX(90deg);
+  }
+  #bottom{
+      top:125px;
+      transform:rotateX(-90deg);
+  } 
+  
+  
+  #back p{
+      margin-top: -15%;
+      transform: rotateY(-180deg);
+      
+  }
+
+  .btn{
+      display: flex;
+      align-items: flex-start;
+      font-weight: 500;
+  }
+   p{
+      margin-top: -15%;
+  }
